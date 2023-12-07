@@ -1,0 +1,12 @@
+10 rozdil srazek = 
+// -- suma srazek v danem roce
+SUM(data[srazky])
+-- minus
+-
+-- suma srazek v minimalnim roce
+SUMX(
+    FILTER(
+        --krok1: Kopie tabulky data zbavena vsech filtru
+        ALL(data),
+    data[rok] = MINX(ALL(data),data[rok])),
+data[srazky])
