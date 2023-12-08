@@ -10,3 +10,21 @@ SUMX(
         ALL(data),
     data[rok] = MINX(ALL(data),data[rok])),
 data[srazky])
+_________________________________________________
+
+21 suma srazek leden mezirocne = 
+
+
+-- suma srazek v danem roce, lokalite a mesic 1
+SUMX(
+    FILTER(data,data[mesic] = 1),
+data[srazky])
+-
+-- suma srazek v predchozim roce, dane lokalite, mesic1
+SUMX(
+    FILTER(all(data),
+    data[rok] = max(data[rok])-1
+    && data[lokalita] = SELECTEDVALUE(data[lokalita])
+    && data[mesic] = 1
+    ),
+data[srazky])
