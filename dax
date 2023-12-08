@@ -28,3 +28,16 @@ SUMX(
     && data[mesic] = 1
     ),
 data[srazky])
+____________________________________________
+
+_srazky predchozi rok = 
+if(
+    SUM(data[srazky])
+    -
+SUMX(
+    FILTER(
+        ALL(data),
+    data[lokalita] = SELECTEDVALUE(data[lokalita])
+    && data[mesic] = SELECTEDVALUE(data[mesic])
+    && data[rok] = MAX(data[rok]) - 1),
+data[srazky])>0,"#ff1493")
