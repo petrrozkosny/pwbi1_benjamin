@@ -41,3 +41,7 @@ SUMX(
     && data[mesic] = SELECTEDVALUE(data[mesic])
     && data[rok] = MAX(data[rok]) - 1),
 data[srazky])>0,"#ff1493")
+_______________________________________
+
+_nazev grafu = 
+"Suma srážek v roce "&SELECTEDVALUE(data[rok])&", lokalitě "&SELECTEDVALUE(data[lokalita])
