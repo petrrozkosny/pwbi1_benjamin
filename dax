@@ -59,3 +59,16 @@ MAXX(
     ,data[mesic] = SELECTEDVALUE(data[mesic]) 
     && data[lokalita] = SELECTEDVALUE(data[lokalita])),
 data[srazky]),"GOLD")
+
+_____________________________________________________
+
+pf max srazky = 
+if(
+-- maximalni srazky v danem roce a mesici
+MAX(data[srazky])
+-- maximalni srazky ve vsech letech, mesicich
+=
+
+MAXX(
+    ALL(data),
+data[srazky]),"DEEP PINK")
