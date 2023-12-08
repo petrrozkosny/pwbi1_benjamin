@@ -45,3 +45,17 @@ _______________________________________
 
 _nazev grafu = 
 "Suma srážek v roce "&SELECTEDVALUE(data[rok])&", lokalitě "&SELECTEDVALUE(data[lokalita])
+
+
+__________________________________________________
+
+22 cf max srazky = 
+
+IF(MAX(data[srazky]) 
+= 
+MAXX(
+    FILTER(
+        ALL(data)
+    ,data[mesic] = SELECTEDVALUE(data[mesic]) 
+    && data[lokalita] = SELECTEDVALUE(data[lokalita])),
+data[srazky]),"GOLD")
